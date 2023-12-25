@@ -4,6 +4,7 @@
 
 ---
 
-## In-Progress Projects
+### [Employee Registration with Validation](./employee-registration/)
 
-### [Employee Registration](./employee-registration/)
+
+## In-Progress Projects
