@@ -1,0 +1,24 @@
+body{
+    background-color: #6617cb;
+background-image: linear-gradient(315deg, #6617cb 0%, #cb218e 74%);
+}
+.text{
+    text-align: center;
+}
+input, textarea{
+    margin: 20px;
+    border: none;
+    outline: none;
+    border-bottom: 1px white solid;
+    background-color: transparent; 
+    resize: none; /* Disable resizing */
+    overflow: hidden; /* Hide the scrollbar */
+    color:black;
+    background-color: transparent; /* Set the background color to transparent */
+}  
+#nameInput {
+    transition: border-bottom-color 0.3s ease; /* Add a smooth transition effect */
+  }
+  label{
+    padding-left: 20px;
+  }
