@@ -4,8 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1> Hello</h1>
+    <h1 class="text">Employee Registration</h1>
+    <div class="container w-25 p-4 d-flex flex-column ">
+        <label for="name">Name</label>
+        <input type="text" id="nameInput"   oninput="validateName() " class="col-sm-12">
+        <label for="name">Email</label>
+        <input type="email" id="emailInput" oninput="validateEmail()" class="col-sm-12">
+        <label for="name">Password</label>
+        <input type="text" id="passwordInput"  oninput="validatePassword()" class="col-sm-12">
+        <label for="name">Re-Confirm</label>
+        <input type="text" id="repeatPasswordInput" oninput="validateRepeatPassword()" class="col-sm-12" >      
+    
+      <button class="btn btn-primary m-auto">Register User</button>
+
+           
+    </div>
+<script>
+   function isValidName(name) {
+      const nameRegex = /^[A-Za-z\s]+$/;
+      return nameRegex.test(name);
+    }
+
+    function validateName() {
+      const inputName = document.getElementById("nameInput").value;
+      const nameInput = document.getElementById("nameInput");
+
+      if (isValidName(inputName)) {
+        nameInput.style.borderBottom = "2px solid green";
+      } else {
+        nameInput.style.borderBottom = "2px solid red";
+      }
+    }
+
+//email pattern 
+const isValidEmail = (email) => {
+  const emailRegex = /^[a-zA-Z0-9._-]{4,}@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,3}$/;
+  return emailRegex.test(email);
+};
+function validateEmail() {
+      const inputEmail = document.getElementById("emailInput").value;
+      const emailInput = document.getElementById("emailInput");
+
+      if (isValidEmail(inputEmail)) {
+        emailInput.style.borderBottom = "2px solid green";
+      } else {
+        emailInput.style.borderBottom = "2px solid red";
+      }
+    }
+    const isValidPassword = (password) => {
+  const passwordRegex = /[a-zA-Z\d]{8,}/;
+  return passwordRegex.test(password);
+};
+
+//password 
+function validatePassword() {
+      const inputPassword = document.getElementById("passwordInput").value;
+      const password = document.getElementById("passwordInput");
+
+      if (isValidPassword(inputPassword)) {
+        passwordInput.style.borderBottom = "2px solid green";
+      } else {
+        passwordInput.style.borderBottom = "2px solid red";
+      }
+    }
+//reentered pass
+
+function validateRepeatPassword() {
+        const password = document.getElementById("passwordInput").value;
+        const repeatPassword = document.getElementById("repeatPasswordInput").value;
+        const repeatPasswordInput = document.getElementById("repeatPasswordInput");
+
+        if (password === repeatPassword && password !== "") {
+            repeatPasswordInput.style.borderBottom = "2px solid green";
+        } else {
+            repeatPasswordInput.style.borderBottom = "2px solid red";
+        }
+    }
+</script>
 </body>
 </html>
